@@ -1,0 +1,21 @@
+package easyChain;
+
+import java.util.ArrayList;
+import com.google.gson.GsonBuilder;
+
+public class easyChain {
+	
+	public static ArrayList<Block> blockchain = new ArrayList<Block>();
+	
+	public static void main(String[] args){
+		
+		blockchain.add(new Block("1st Block", "0"));
+		blockchain.add(new Block("2st Block", blockchain.get(blockchain.size()-1).hash));
+		blockchain.add(new Block("3st Block", blockchain.get(blockchain.size()-1).hash));
+		
+		String blockChainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
+		
+		System.out.println(blockChainJson);
+	}
+
+}

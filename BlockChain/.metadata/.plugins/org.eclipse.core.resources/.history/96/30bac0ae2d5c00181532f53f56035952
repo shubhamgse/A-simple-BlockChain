@@ -1,0 +1,5 @@
+package easyChain;
+
+public class Block {
+
+}

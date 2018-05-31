@@ -1,0 +1,17 @@
+{
+  "C:\\Users\\Shubham\\Documents\\Projects\\Block Chain\\easyChain\\src": {
+    "location": "C:\\Users\\Shubham\\Documents\\Projects\\Block Chain\\easyChain\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Shubham\\Documents\\Projects\\Block Chain\\easyChain\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_161\\lib\\rt.jar": {
+    "location": "C:\\Program Files\\Java\\jre1.8.0_161\\lib\\rt.jar",
+    "status": "UNRESOLVED",
+    "error": "Could not transfer artifact jre:jre:zip:call:1.0.0 from/to remote-models (http://download.eclipse.org/recommenders/models/kepler/): Error transferring file, server returned status code 307"
+  },
+  "C:\\Users\\Shubham\\Downloads\\gson-2.6.2.jar": {
+    "coordinate": "com.google.gson:com.google.gson:zip:call:2.0.0",
+    "location": "C:\\Users\\Shubham\\Downloads\\gson-2.6.2.jar",
+    "status": "RESOLVED"
+  }
+}

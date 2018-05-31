@@ -1,0 +1,18 @@
+package easyChain;
+
+public class easyChain {
+	
+	public static void main(String[] args){
+		
+		Block bornBlock = new Block("I am new born baby block", "0");
+		System.out.println("Hash for block 1 : " + bornBlock.hash);
+		
+		Block secondBlock = new Block("I am new born baby block", bornBlock.hash);
+		System.out.println("Hash for block 2 : " + secondBlock.hash);
+		
+		Block thirdBlock = new Block("I am new born baby block", secondBlock.hash);
+		System.out.println("Hash for block 3 : " + thirdBlock.hash);
+		
+	}
+
+}
