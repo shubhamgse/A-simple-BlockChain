@@ -1,0 +1,48 @@
+package easyChain;
+
+import java.util.ArrayList;
+import com.google.gson.GsonBuilder;
+
+public class easyChain {
+	
+	public static ArrayList<Block> blockchain = new ArrayList<Block>();
+	
+	public static void main(String[] args){
+		
+		blockchain.add(new Block("1st Block", "0"));
+		blockchain.add(new Block("2st Block", blockchain.get(blockchain.size()-1).hash));
+		blockchain.add(new Block("3st Block", blockchain.get(blockchain.size()-1).hash));
+		
+		String blockChainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
+		
+		System.out.println(blockChainJson);
+	}
+	
+	public static Boolean isChainValid(){
+		Block currentBlock;
+		Block previousBlock;
+		
+		//loop through chain to check hashes
+		for(int i = 1; i < blockchain.size(); i++){
+			
+			currentBlock = blockchain.get(i);
+			previousBlock = blockchain.get(i-1);
+			
+			//compare original hash vs calculatedhash
+			if(!currentBlock.hash.equals(currentBlock.calculateHash())){
+				System.out.println("Current hashes are not equal");
+				return false;
+			}
+			
+			//compare previous hash and previous original hash
+			if(!previousBlock.hash.equals(currentBlock.calculateHash())){
+				System.out.println("Previous hashes are not equal");
+				return false;
+			}
+			
+		}
+		
+		return true;
+	}
+
+}

@@ -5,22 +5,25 @@ import com.google.gson.GsonBuilder;
 
 public class easyChain {
 	
-	public static ArrayList<Block> blockchain = new ArrayList<Block>();
+	public static ArrayList<Block> blockchain = new ArrayList<Block>(); // Array list to store block data
 	
 	public static void main(String[] args){
+		
+		/*Manually adding blocks to ArrayList*/
 		
 		blockchain.add(new Block("1st Block", "0"));
 		blockchain.add(new Block("2st Block", blockchain.get(blockchain.size()-1).hash));
 		blockchain.add(new Block("3st Block", blockchain.get(blockchain.size()-1).hash));
 		
-		String blockChainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
+		String blockChainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain); /*GSON library to turn object to 
+																									JSON and print in appropriate format*/
 		
 		System.out.println(blockChainJson);
 	}
 	
 	public static Boolean isChainValid(){
-		Block currentBlock;
-		Block previousBlock;
+		Block currentBlock;					//Arraylist to store current block data
+		Block previousBlock;				//Arraylist to store previous block data
 		
 		//loop through chain to check hashes
 		for(int i = 1; i < blockchain.size(); i++){

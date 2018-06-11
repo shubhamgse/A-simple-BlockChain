@@ -1,6 +1,10 @@
 package easyChain;
 import java.security.MessageDigest;
 
+/*This class StringUtil is used to apply SHA-256 algorithm
+to take mixture of blocks data and create a unique key 
+for each block*/
+
 public class StringUtil {
 	
 	public static String applySha256(String input){
